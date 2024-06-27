@@ -9,7 +9,7 @@ ARG SEARXNG_UID=977
 RUN addgroup -g ${SEARXNG_GID} searxng && \
     adduser -u ${SEARXNG_UID} -D -h /usr/local/searxng -s /bin/sh -G searxng searxng
 
-ENV INSTANCE_NAME=searxng \
+ENV INSTANCE_NAME=aculi-search \
     AUTOCOMPLETE= \
     BASE_URL= \
     MORTY_KEY= \
@@ -70,21 +70,10 @@ ARG SEARXNG_GIT_VERSION=unknown
 ARG SEARXNG_DOCKER_TAG=unknown
 ARG LABEL_VCS_REF=
 ARG LABEL_VCS_URL=
-LABEL maintainer="searxng <${GIT_URL}>" \
-      description="A privacy-respecting, hackable metasearch engine." \
-      version="${SEARXNG_GIT_VERSION}" \
+LABEL description="A private searchengine, made by aculi, based on searxng" \
       org.label-schema.schema-version="1.0" \
-      org.label-schema.name="searxng" \
-      org.label-schema.version="${SEARXNG_GIT_VERSION}" \
-      org.label-schema.url="${LABEL_VCS_URL}" \
-      org.label-schema.vcs-ref=${LABEL_VCS_REF} \
-      org.label-schema.vcs-url=${LABEL_VCS_URL} \
+      org.label-schema.name="aculi" \
       org.label-schema.build-date="${LABEL_DATE}" \
-      org.label-schema.usage="https://github.com/searxng/searxng-docker" \
-      org.opencontainers.image.title="searxng" \
-      org.opencontainers.image.version="${SEARXNG_DOCKER_TAG}" \
-      org.opencontainers.image.url="${LABEL_VCS_URL}" \
-      org.opencontainers.image.revision=${LABEL_VCS_REF} \
-      org.opencontainers.image.source=${LABEL_VCS_URL} \
+      org.opencontainers.image.title="aculi" \
       org.opencontainers.image.created="${LABEL_DATE}" \
       org.opencontainers.image.documentation="https://github.com/searxng/searxng-docker"
